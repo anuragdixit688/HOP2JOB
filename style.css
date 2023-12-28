@@ -1,0 +1,100 @@
+* {
+    padding: 3px;
+    margin: 0;
+  }
+
+  @media only screen and (max-width: 420px) {
+    .main-section {
+      display: grid; /*grid property will make it one by one downward*/
+      padding: 5px;
+    }
+    .main-section.box {
+      width: auto;
+      object-fit: cover;
+    }
+  }
+
+  @media (min-width: 421) and (max-width: 820) {
+    .main-section {
+      /*grid property will make it one by one downward*/
+      padding: 5px;
+    }
+    .main-section.box {
+      width: auto;
+      object-fit: cover;
+    }
+  }
+
+  @media (min-width: 821px) and (max-width: 2000px) {
+    .main-section {
+      display: flex;
+      /* first value represents top and bottom and second left right */
+      /* of you want to edit all the four dimensions then you can mention all the four values writing just like this and the order will be top right bottom left (meaning clockwise direction) */
+      /* plus there are sepearate tags also for padding such as padding right left top... */
+      /* margin is for outer space and padding is for inside space  */
+      padding: 0px 10px;
+    }
+    .box {
+      /* perecntage m dena chahie kyunki sbka screen alg hota hai */
+      width: 33.33%;
+      margin: 10px;
+      /* overflow: hidden; */
+      box-shadow: 0px 3px 30px 0px grey;
+      transition: 1s;
+      animation: move1 5s infinite linear; /* animation naam,time,kitnibaar hona chahiye... infinite linear infinite baar chalayega forward ek baar animation ki vjh se hover hata diya hia */
+      animation-delay: 3s; /*kitne delay m hona hai animation mtlb itne time baad animation hone lgega*/
+    }
+    /* keyframes m hum apne animation ko define krenge ki kese aana hai kese dikhna hai */
+    /* transform rotate to from se hum usko ese ghumate hue dikhayenge ki ese ghumna */
+    /* transform scale se hum usko ese bilkul 0 se bada bante hue dikhayenge ki ese mtlb aara hai vo bhar */
+    /* apn percentage of animation time m bhi mention kr skte hai keyframes k andr ki apn ko kaha se khaa tk kese changes chagite suppose middle m kuch alg chahiye toh vo bhi ho jayega */
+    /* alg alg box k liye alg animation krne hai ya alg time pr krne hai toh sbko alg class pkdado fir delay mention krdo */
+    @keyframes move2 {
+      to{
+        transform: scale(1.06);
+      }
+      from{
+        transform: scale(0.8);
+      }
+    }
+    @keyframes move1 {
+      0%{
+        border: none;
+      }
+      24%{
+        border-top: 3px solid whitesmoke;
+        transform: scale(1.02);
+      }
+      48%{
+        border-right: 3px solid white;
+        transform: scale(1.04);
+      }
+      72%{
+        border-bottom: 3px solid whitesmoke;
+        transform: scale(1.02);
+      }
+      96%{
+        border-left: 3px solid white;
+        transform: scale(1);
+      }
+      100%{
+        border: none;
+      }
+
+    }
+    .box-img img {
+      height: 289px;
+      overflow: hidden;
+    }
+    .box-cont {
+      padding: 20px;
+    }
+    .box-cont h2 {
+        text-align: center;
+      color: gainsboro;
+    }
+    .box-cont p {
+     color: white;
+      opacity: 0.5;
+    }
+  }
